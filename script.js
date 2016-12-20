@@ -6,7 +6,7 @@ var paint = false;
 var option = 0; 
 
 
-function generateColors(){
+function generateToolbar(){
 	for(var i = 0; i<colors.length; i++){
 		// create menu
 		var colorpick = document.createElement("div");
@@ -37,7 +37,10 @@ function clickType(){
 
 }
 function typeText(e){
-	if(option=2){
+	
+	if(option==2){
+		
+
 	var canvas = document.getElementById("canvas");
 	var input = document.createElement("input");
 	input.className = "input";
@@ -56,10 +59,8 @@ function typeText(e){
 
 }
 function addText(){
-	console.log("changed");
 	var input = document.getElementById("input");
 	var text = document.createElement("div");
-	console.log(input.style.top);
 	text.style.top=input.style.top;
 	text.style.left= input.style.left;
 	canvas.appendChild(text);
@@ -78,10 +79,11 @@ function mouseDown(){
 
 	paint= true;
 
+
 }
 function mouseUp(){
 	paint= false;
-	option=1;
+
 }
 function draw(e){
 	if(paint && option===1){
@@ -98,12 +100,13 @@ function draw(e){
 		point.style.top= y + "px";
 		point.style.left= x + "px";
 		canvas.appendChild(point);
-		type = false;
 	}
+	
+
 } 
 
 
 
 function init(){
-	generateColors();
+	generateToolbar();
 }
