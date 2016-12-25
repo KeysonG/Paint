@@ -18,11 +18,12 @@ function generateToolbar(){
 		
 		// drawing part
 		colorpick.addEventListener("click", selectedColor)
-		var canvas = document.getElementById("canvas");
+		
+	}
+	var canvas = document.getElementById("canvas");
 		canvas.addEventListener("mousedown", mouseDown);
 		canvas.addEventListener("mouseup", mouseUp);
 		canvas.addEventListener("mousemove", draw);
-	}
 	var textOption = document.createElement("div");
 	textOption.innerHTML= "T";
 	textOption.classList.add("textOption");
@@ -60,6 +61,7 @@ function typeText(e){
 }
 function addText(){
 	var input = document.getElementById("input");
+
 	var text = document.createElement("div");
 	text.style.top=input.style.top;
 	text.style.left= input.style.left;
@@ -89,7 +91,6 @@ function draw(e){
 	if(paint && option===1){
 		var point = document.createElement("div");
 		point.style.background = colors[clicked[1]];
-
 		point.style.width = "5px";
 		point.style.height = "5px";
 		var canvas = document.getElementById("canvas");
